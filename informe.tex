@@ -1,0 +1,39 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{microtype}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
+\addbibresource{referencias.bib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\hypersetup{pdftitle={Amazon.com: del monolito a una arquitectura orientada a servicios}}
+\begin{document}
+\begin{center}
+{\small Aplicaciones Distribuidas -- FORM-IC-01\par}
+\vspace{0.4em}
+{\Large\bfseries Amazon.com: del monolito a una arquitectura orientada a servicios\par}
+\vspace{0.4em}
+{\small Autor: Nixon Piguave\par}
+\end{center}
+
+\section*{Delimitación del caso}
+La investigación estudia la evolución de la plataforma de comercio electrónico Amazon.com hacia una arquitectura orientada a servicios (SOA). El foco es la separación de responsabilidades entre servicios y sus equipos. Se examina la transformación de la tienda; AWS aporta documentación técnica sobre ese proceso.
+
+\section*{Descripción y escala}
+La carta a los accionistas correspondiente a 2010 identifica explícitamente SOA como base de las tecnologías de Amazon. Describe servicios que colaboran en recomendaciones, gestión de pedidos e inventario. Para construir una página de detalle de producto se invocaban entre 200 y 300 servicios. Esta cifra corresponde al periodo descrito en la carta y permite dimensionar el caso sin asumir que representa la arquitectura actual~\cite{amazon2010letter}.
+
+\section*{Arquitectura anterior y transformación}
+El apéndice B de la guía técnica de AWS sitúa en 2001 una aplicación monolítica que reunía presentación, lógica de negocio y acceso a datos. La transformación comprendió cambios tecnológicos, organizativos y de operación: equipos responsables de productos y herramientas compartidas para automatizar entregas. La guía también explica que un estudio interno de 2009 detectó demoras debidas a procesos manuales, lo que impulsó el desarrollo de herramientas de canalización de código~\cite[apéndice B, pp. 17--19]{aws2021cee}.
+
+\section*{Beneficios y desafíos identificados}
+La separación mediante interfaces permitió que los servicios evolucionaran con menor impacto sobre otros componentes~\cite{amazon2010letter}. La guía de AWS informa de 50 millones de despliegues en 2016 como resultado de la transformación conjunta de herramientas, procesos y organización. Esa cifra no demuestra por sí sola el efecto aislado de SOA. Entre los aspectos operativos abordados estuvieron el diseño ante fallos, la supervisión centralizada y la responsabilidad de cada equipo sobre la construcción y operación de su producto~\cite[apéndice B, pp. 18--19]{aws2021cee}.
+
+\clearpage
+\printbibliography[title={Referencias}]
+\end{document}
